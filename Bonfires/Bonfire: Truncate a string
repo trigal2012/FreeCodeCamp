@@ -1,0 +1,13 @@
+function truncate(str,num){
+  var str1 = "";
+  if (num >= str.length){
+    return str;
+  }
+  else if (num > 3){
+    str1 = str.slice(0,num-3);
+    return str1+"...";
+  }
+    str1 = str.slice(0,num);
+    return str1+"...";
+}
+truncate("A-tisket a-tasket A green and yellow basket", 42);
