@@ -1,0 +1,33 @@
+function destroyer(arg){
+
+  //create full array from input
+  var args = Array.prototype.slice.call(arguments);
+  console.log("this is the full array: "+args);
+  
+  //create the input array
+  var myArray = [];
+  for (var x=0; x<args[0].length;x++){
+  myArray.push(args[0][x]);
+  }  
+  console.log ("this is the input array: "+myArray);
+  
+  //create array of things to be removed
+  args.splice(0,1);
+  console.log("these are the things to be removed: "+args);
+
+  //remove those things
+  var rmOdd = args;
+  for (var i = 0; i<myArray.length;i++){
+      for (var j = 0; j< rmOdd.length; j++){
+      var idx = myArray.indexOf(rmOdd[j]);
+      console.log(idx);
+      if (idx !== -1) {
+          myArray.splice(idx, 1);
+      }
+      }
+  }
+ console.log(myArray);
+  return myArray;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
