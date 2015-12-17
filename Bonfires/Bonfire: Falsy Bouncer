@@ -1,0 +1,13 @@
+function bouncer(arr){
+  myArray = [];
+  arr.forEach(checkArray);
+
+function checkArray(element, index, array){  
+
+if (!(Number.isNaN(element+1)) && element !== false && element !== 0 && element !== undefined && element !== null && element !==""){
+    myArray.push(element);
+  }
+}
+  return myArray;
+}
+bouncer([7, "ate", "", false, 9]);
