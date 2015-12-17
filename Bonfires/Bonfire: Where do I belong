@@ -1,0 +1,43 @@
+function where(arr, num) {
+  
+  var idx = "";
+  var y = num;
+  var points = arr;
+  
+  //sort the array
+  points.sort(function(a, b){
+              return a-b;
+              });
+  console.log(points);
+
+
+  //first look to see if the number is already in the array
+  var numIdx = points.indexOf(num);
+     console.log(numIdx);
+    if (numIdx !== -1){
+      idx=numIdx;
+      console.log(idx);      
+    } 
+    //it's not in the array, determine if it goes to the end of the array   
+    else if(points[points.length-1] <= y){           
+               idx = points.length;
+               console.log(idx);
+    }
+    //if it does not go at the end, does it go at the beginning
+     else if (points[0]>=y){
+               idx = 0;
+               console.log(idx); 
+    //if it does not go at the end or beginning, then it goes in the middle
+    } else{
+          for (var i = 1; i<= points.length-1; i++){
+              if(points[i]>=y){
+                idx = i;
+                i=points.length;
+                console.log(idx);
+              }
+          }
+    }
+  return idx;
+}
+
+where([40, 60,], 50);
