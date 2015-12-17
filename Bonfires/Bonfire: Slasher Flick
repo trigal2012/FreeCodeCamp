@@ -1,0 +1,6 @@
+function slasher(arr, howMany) {
+  var myArray = arr.slice(howMany,arr.length+howMany);
+  return myArray;
+}
+
+slasher(["dogs", "cats", "birds", "snakes"], 0);
