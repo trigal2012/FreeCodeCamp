@@ -15,20 +15,20 @@
 
 <h2>Bonfires</h2>
   <ul>
-    </li>Bonfire: Meet Bonfire	Dec</li>
-    </li>Bonfire: Reverse a String</li>
-    </li>Bonfire: Factorialize a Number</li>
-    </li>Bonfire: Check for Palindromes</li>
-    </li>Bonfire: Find the Longest Word</li>
-    </li>Bonfire: Title Case a Sentence</li>
-    </li>Bonfire: Return Largest Numbers</li>
-    </li>Bonfire: Confirm the Ending</li>
-    </li>Bonfire: Repeat a string repeat a string</li>
-    </li>Bonfire: Truncate a string</li>
-    </li>Bonfire: Chunky Monkey</li>
-    </li>Bonfire: Slasher Flick</li>
-    </li>Bonfire: Mutations</li>
-    </li>Bonfire: Falsy Bouncer</li>
-    </li>Bonfire: Seek and Destroy</li>
-    </li>Bonfire: Where do I belong</li>
+    <li>Bonfire: Meet Bonfire	Dec</li>
+    <li>Bonfire: Reverse a String</li>
+    <li>Bonfire: Factorialize a Number</li>
+    <li>Bonfire: Check for Palindromes</li>
+    <li>Bonfire: Find the Longest Word</li>
+    <li>Bonfire: Title Case a Sentence</li>
+    <li>Bonfire: Return Largest Numbers</li>
+    <li>Bonfire: Confirm the Ending</li>
+    <li>Bonfire: Repeat a string repeat a string</li>
+    <li>Bonfire: Truncate a string</li>
+    <li>Bonfire: Chunky Monkey</li>
+    <li>Bonfire: Slasher Flick</li>
+    <li>Bonfire: Mutations</li>
+    <li>Bonfire: Falsy Bouncer</li>
+    <li>Bonfire: Seek and Destroy</li>
+    <li>Bonfire: Where do I belong</li>
   </ul>
