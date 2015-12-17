@@ -6,6 +6,8 @@
 <ul>
 <li>Waypoint: Line up Form Elements Responsively with Bootstrap</li>
 <li>Waypoint: Label Bootstrap Buttons</li>
+<li>Waypoint: Target the same element with multiple jQuery Selectors</li>
+<li>Waypoint: Use appendTo to Move Elements with jQuery</li>
 
 
 </ul>
