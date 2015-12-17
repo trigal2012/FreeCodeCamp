@@ -1,0 +1,12 @@
+//repeat a string
+
+function repeat(str, num){
+  var myStr = "";
+  for (var i = 0; i<num; i++){
+    myStr = myStr+str;
+  }
+  console.log(myStr);
+  return myStr;
+}
+
+repeat("abc",4);
