@@ -1,0 +1,22 @@
+function mutation(inputStr){
+  
+  var myTest = ""; 
+
+  for (var i=0;i<inputStr[1].length; i++){
+    var pattern = new RegExp("(?=.*"+inputStr[1][i]+")","gi");
+    myTest = pattern.test(inputStr[0]);
+
+    if (myTest === false){
+        i=inputStr.length;
+      }
+    
+  }
+    console.log("the result is: "+myTest);
+    if(myTest === false){
+      return false;
+      } else {
+        return true;
+        }
+}
+
+mutation(["hello", "leo"]);
