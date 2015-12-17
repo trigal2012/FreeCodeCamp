@@ -1,0 +1,23 @@
+//return last letter of first string
+
+function end(arr,ltr){
+  
+  //input array
+  var myArray = []; 
+  myArray = arr.split(" ");
+  console.log(myArray[0][myArray[0].length-1]);
+  
+  //comparison array
+  var myComp = [];
+  myComp = ltr.split(" ");
+  myComp = myComp[myComp.length-1][myComp[myComp.length-1].length-1];
+  console.log(myComp);
+  
+ if(myArray[0].endsWith(myComp) === true){
+   console.log("true");
+   return true;
+ } console.log("false");
+  return false;
+}
+
+end("Walkingspecification on water and developing software from a specification are easy if both are frozen", "specification dgzd californi acation dfsldfldsfn");
