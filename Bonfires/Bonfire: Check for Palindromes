@@ -1,0 +1,14 @@
+function palindrome(str) {
+  // Good luck!
+var str1 = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+  
+ var strReverse = str.split('').reverse().join('').replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+ if (strReverse == str1){
+    return true;
+    }
+  else return false;
+}
+
+
+
+palindrome("");
