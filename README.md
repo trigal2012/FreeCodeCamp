@@ -15,7 +15,6 @@
 
 <h2>Bonfires</h2>
   <ul>
-    <li>Bonfire: Meet Bonfire	Dec</li>
     <li>Bonfire: Reverse a String</li>
     <li>Bonfire: Factorialize a Number</li>
     <li>Bonfire: Check for Palindromes</li>
