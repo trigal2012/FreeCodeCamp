@@ -8,6 +8,7 @@
 <li>Waypoint: Label Bootstrap Buttons</li>
 <li>Waypoint: Target the same element with multiple jQuery Selectors</li>
 <li>Waypoint: Use appendTo to Move Elements with jQuery</li>
+<li>Waypoint: Use jQuery to Modify the Entire Page</li>
 
 
 </ul>
