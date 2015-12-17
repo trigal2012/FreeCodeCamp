@@ -1,0 +1,16 @@
+function chunk(inputArr,num){
+  var myArr = [];
+  var loops = inputArr.length/num;
+  
+  console.log(loops);
+  console.log(inputArr);
+ 
+  for (var i = 0; i < loops ; i++){
+    var temp = myArr.push(inputArr.splice(0,num));
+  }
+
+  console.log(myArr);
+  return myArr;
+}
+ 
+chunk([0, 1, 2, 3, 4, 5,9], 4);
