@@ -1,0 +1,31 @@
+function convert(num){
+
+  //define the roman numerals
+var romNum = [
+              ['','I','II','III','IV','V','VI','VII','VIII','IX'],
+              ['','X','XX','XXX','XL','L','LX','LXX','LXXX','XC'],
+              ['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM'],
+             ];
+
+//take the input and create an array to iterate over
+var input = num;
+var inputArray = input.toString().split('').reverse();
+var outputArray = [];
+
+//figure which roman numeral to use
+  for (var i=0;i<inputArray.length;i++){
+  if(i<3){
+  outputArray.push((romNum[i][inputArray[i]]));
+  } else {
+    var em = 'M'.repeat(inputArray[i]);
+    outputArray.push(em);
+  }
+}
+
+  //get the output ready for viewing
+var tempArray = outputArray.reverse().join('');
+  return tempArray;
+
+}
+
+console.log(convert(1023));
