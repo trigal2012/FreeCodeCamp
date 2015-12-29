@@ -1,0 +1,24 @@
+function diff(arr1, arr2){
+var input1 = arr1;
+var input2 = arr2;
+var diffArray = [];
+
+for (var i= 0; i< input1.length; i++){
+  updateDiffArray(input1[i], input2);
+  }
+console.log(diffArray);
+  
+for (var j= 0; j< input2.length; j++){
+  updateDiffArray(input2[j], input1);
+  }
+console.log(diffArray);
+
+function updateDiffArray(in1, in2){
+  if (in2.indexOf(in1)=== -1){
+    diffArray.push(in1);
+  }
+}
+  return diffArray;
+}
+
+diff([1, "calf", 3, "piglet"], [7, "filly"]);
