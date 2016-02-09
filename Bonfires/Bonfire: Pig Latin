@@ -1,0 +1,27 @@
+function translate(str) {
+
+//for the string, find the vowels
+
+if(str[0].toLowerCase() == 'a'||
+   str[0].toLowerCase() == 'e'||
+   str[0].toLowerCase() == 'i'||
+   str[0].toLowerCase() == 'o'||
+   str[0].toLowerCase() == 'u')
+   
+   {
+   str = str.concat('way');
+   }
+
+else if(str[0].toLowerCase() =='g'&& str[1].toLowerCase()=='l'){
+  str= str.concat(str[0]+ str[1]+'ay').slice(1).slice(1);
+}
+
+else {
+  str= str.concat(str[0]+'ay').slice(1);
+}
+
+console.log(str);
+return str;
+
+}
+translate("glove");
