@@ -1,0 +1,11 @@
+function boo(bool) {
+  var x = '';
+  if(bool === true || bool === false){
+   x = true;
+  }
+  else {
+   x = false;
+  }
+  
+  return x;
+}
