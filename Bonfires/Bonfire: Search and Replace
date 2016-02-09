@@ -1,0 +1,13 @@
+function myReplace(str, before, after) {
+
+// if findMe position 0 is UpperCase than make replaceWithMe position 0 UpperCase
+if(before[0].toUpperCase() == before[0])
+{
+   after=after[0].toUpperCase()+after.slice(1); 
+}
+
+  console.log(str.split(before).join(after));
+  return str.split(before).join(after);
+}
+
+myReplace("Let us get back to more Coding", "Coding", "algorithms");
