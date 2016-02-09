@@ -1,0 +1,14 @@
+function convert(Tc) {
+  // Only change code below this line
+  
+var Tf = (Tc *9/5) +32;
+  // Only change code above this line
+  if(typeof Tf !== 'undefined') {
+  return Tf;
+  } else {
+    return "Tf not defined";
+  }
+}
+
+// Change the inputs below to test your code
+convert(30);
