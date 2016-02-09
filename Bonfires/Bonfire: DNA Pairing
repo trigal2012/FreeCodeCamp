@@ -1,0 +1,26 @@
+function pair(str1){
+var str = [];
+  for (var i=0; i<str1.length; i++){
+
+if (str1[i] == "G"){
+  var tempArr =["G","C"];
+  str.push(tempArr);  
+}
+else if (str1[i] == "C"){
+  var tempArr =["C","G"];
+  str.push(tempArr);  
+}
+else if (str1[i] == "A"){
+  var tempArr =["A","T"];
+  str.push(tempArr);  
+}
+else if (str1[i] == "T"){
+  var tempArr =["T","A"];
+  str.push(tempArr);  
+}
+}
+
+return str;
+}
+
+pair("GCG");
