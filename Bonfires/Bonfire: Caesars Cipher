@@ -1,0 +1,28 @@
+function rot13(input) { // LBH QVQ VG!
+ var output = "";
+
+var rotA = ['A','B','C','D','E','F','G','H','I','J','K','L','M'];
+var rotB = ['N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+
+var inverse = "";
+
+for (var i = 0; i < input.length; i++){
+
+if ((rotA.indexOf(input[i])=== -1 && rotB.indexOf(input[i]) === -1)){
+   output=output.concat(input[i]);
+    }
+else if(rotA.indexOf(input[i])=== -1){
+  inverse = rotA[rotB.indexOf(input[i])];
+  output=output.concat(inverse);
+}
+else if(rotB.indexOf(input[i]) === -1){
+  inverse = rotB[rotA.indexOf(input[i])];
+  output=output.concat(inverse);
+}
+}
+  return output;
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
