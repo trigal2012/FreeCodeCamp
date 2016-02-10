@@ -1,0 +1,11 @@
+function spinalCase(str) {
+  
+  //add dash before upper case, remove underscore,replace space with dash,make lowercase, remove extra dash, remove dash at beginning  
+  str = str.replace(/([A-Z])/g, '-$1').replace(/_/g,"").replace(/\ /g, "-").toLowerCase().replace(/\--/g, "-").replace(/^-t/, 't');
+ 
+  console.log(str);
+    
+  return str;
+}
+
+spinalCase("This Is Spinal Tap");
