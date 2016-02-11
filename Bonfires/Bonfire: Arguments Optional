@@ -1,0 +1,25 @@
+function add(x) {
+  var result = '';
+  if(arguments.length==1 && typeof arguments[0] === 'number'){
+    return function(y){
+      if(typeof y === 'number'){
+      return x + y;
+      }
+      else {
+        result = undefined;
+      }
+    };
+  }
+  
+  else if(typeof arguments[0] != 'number' || typeof arguments[1] != 'number'){
+    result = undefined;
+  }
+  else if(typeof arguments[0] === 'number' && typeof arguments[1] === 'number'){
+    result = arguments[0]+arguments[1];
+  }
+  
+  
+  return result;
+}
+
+add(2,3);
