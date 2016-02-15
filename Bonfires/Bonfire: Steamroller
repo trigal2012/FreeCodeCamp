@@ -1,0 +1,26 @@
+//flatten into array
+
+function steamroller(arr){
+  var arrTemp = [];
+  function checkArray(arr, index){
+    if(Array.isArray(arr[index])){
+      for(var i=0; i<arr[index].length; i++){
+        checkArray(arr[index],i);
+      }
+    }
+    else{
+      arrTemp.push(arr[index]);
+    }    
+  }
+
+  for(var j= 0; j<arr.length; j++){
+    checkArray(arr,j);
+  }
+
+  console.log(arrTemp);
+  return arrTemp;
+}
+steamroller([[["a"]], [["b"]]]);
+steamroller([1, [2], [3, [[4]]]]);
+steamroller([1, [], [3, [[4]]]]);
+steamroller([1, {}, [3, [[4]]]]);
