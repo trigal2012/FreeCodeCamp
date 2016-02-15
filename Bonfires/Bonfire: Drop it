@@ -1,0 +1,16 @@
+function drop(arr, func) {
+  var num = 0;
+  var result = arr;
+
+    while(func(arr[0])!==true){
+      arr.shift();
+      result = arr;  
+    }
+
+  
+  // Drop them elements.
+  console.log(result);
+  return result;
+}
+
+drop([1, 2, 3, 4], function(n) {return n >= 3;});
