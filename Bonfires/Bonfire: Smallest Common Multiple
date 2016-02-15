@@ -1,0 +1,50 @@
+function smallestCommons(arr1){
+  var small = '';
+  var large = '';
+  var count = 1;
+  //determine which number is largest
+
+  if(arr1[0]<arr1[1]){
+    large = arr1[1];
+    small = arr1[0];
+  }
+  else if(arr1[1]<arr1[0]){
+    large = arr1[0];
+    small = arr1[1];
+  }
+  else if (arr1[0]===arr1[1]){
+    small = arr1[0];
+    large = arr1[1];
+    count = 1;
+  }
+  
+  //make the array
+  var arr = [];
+  for (var j = small; j<large-1; j++){
+    arr.push(j+1);
+    }
+  console.log(arr);
+  
+  //funcrion to divide large by each element of array
+  var arrTemp = [];
+  function div(arr, large, count){
+    for(var i = 0; i<arr.length; i++){
+      if((large*count)%arr[i] !== 0){
+        arrTemp.push(1);
+      }
+    }
+    return arrTemp;
+  }
+
+  //callback function to keep dividing until smallest common is determined
+  div(arr,large,count);
+  while (arrTemp.includes(1)){
+  count = count+1;
+  arrTemp=[];
+  div(arr,large,count);
+  }
+
+  return large*count;
+}
+// noprotect;
+smallestCommons([1,13]);
