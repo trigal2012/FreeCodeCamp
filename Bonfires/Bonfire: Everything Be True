@@ -1,0 +1,33 @@
+function every(collection,pre){
+
+  var arrTemp = [];
+  var result = '';
+  for(var i= 0;i<collection.length;i++){
+    if(collection[i][pre]){
+      
+    }
+    else {
+
+      arrTemp.push(1);
+    }
+    }
+  if (arrTemp.includes(1)){
+    console.log(false);
+    result = false;
+  }
+  else{
+    console.log(true);
+    result = true;
+    } 
+  return result;
+}
+
+
+
+//true
+every([
+  {"user": "Tinky-Winky", "sex": "male"}, 
+  {"user": "Dipsy", "sex": "male"}, 
+  {"user": "Laa-Laa", "sex": "female"}, 
+  {"user": "Po", "sex": "female"}], 
+      "sex");
