@@ -1,0 +1,18 @@
+//convert &, <, >, ", ' to their HTML equivalent
+function convert(str){
+
+var input = str;
+
+input = input.replace(/\&/g, '&amp;').replace(/\</g,'&lt;').replace(/\>/g,'&gt;').replace(/\"/g,'&quot;').replace(/\'/g,'&apos;');
+
+  console.log(input);
+  return input;
+}
+
+convert("Dolce & Gabbana") ;
+convert("Hamburgers < Pizza < Tacos");
+convert("Sixty > twelve");
+convert('Stuff in "quotation marks"');
+convert("Shindler's List") ;
+convert("<>") ;
+convert("abc");
