@@ -1,3 +1,5 @@
+//create a function that can Sum All Primes between 1 and the input
+
 function sumPrimes(max) {
     var sieve = [], i, j, primes = [];
     for (i = 2; i <= max; ++i) {
