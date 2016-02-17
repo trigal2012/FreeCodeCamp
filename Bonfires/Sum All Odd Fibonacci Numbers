@@ -1,0 +1,43 @@
+//create array of all fib numbers from 1 to the inputNum
+//return the sum of all odd fibonacci numbers up to and including the input, if it is a fibonacci number
+//fibonacci sequence is 1,1,2,3,5,8 (each subsequent number is the sum of the previous two numbers.)
+
+function sumFibs(num){
+
+  
+  var input = [1,1];
+  var lastNum = num;
+  var total = '';
+  
+  if(num === 1){
+    total = 1;
+  }
+  else if(num>1){
+    for (var j = 2; j<lastNum; j++){
+      if(input[j-1]+input[j-2]<=lastNum){
+        input.push(input[j-1]+input[j-2]);
+      }
+    }
+
+  //create array of odd numbers
+    var arrTemp = [];
+    for(var i=0;i<input.length;i++){
+      if(input[i]%2 !== 0){
+         arrTemp.push(input[i]);
+       }
+    }
+    //console.log(arrTemp);
+    total = arrTemp.reduce(function(a, b){ return a + b; });
+    }
+  
+  console.log(total);
+  return total;
+}
+
+sumFibs(1);
+sumFibs(1000);
+sumFibs(4000000);
+sumFibs(4);
+sumFibs(75024);
+sumFibs(75025);
+
