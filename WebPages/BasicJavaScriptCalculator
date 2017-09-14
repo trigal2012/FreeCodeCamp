@@ -1,1 +1,20 @@
 
+<html>
+<body>
+<div>
+	<div id='fullDisplay'>
+		<p id='display'></p>
+		<p id='result'></p>		
+  </div>
+  <div>
+<p></p>
+	</div>
+	<div>
+    		<p id="operators"><button id="add" disabled='true'>+</button><button id="sub" disabled='true'>-</button><button id="mul" disabled='true'>*</button><button id="div" class="operator" disabled='true'>/</button><button id="cal"  disabled='true'>=</button></p>
+    <p <id='numbers'> <button id="7">7</button><button id="8">8</button><button id="9">9</button></br><button id="4">4</button><button id="5">5</button><button id="6">6</button></br><button id="1">1</button><button id="2">2</button><button id="3">3</button></br></br>
+<button id="0">0</button><button id="dot">.</button><button id='ac'>AC</button><br>
+ </p>
+
+	</div>
+</body>
+</html>
