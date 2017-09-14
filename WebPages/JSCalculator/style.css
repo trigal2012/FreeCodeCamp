@@ -1,0 +1,27 @@
+button {
+  width: 60px;
+  height: 60px;
+  border: solid 2px #3333FF;
+  background-color: #66CCFF;
+  margin: 5px;
+  font-size: 35px;
+}
+#ac{
+  width: 130px;
+}
+
+#fullDisplay{
+  width: 338px;
+  height: 60px;
+  border: solid 2px #3333FF;
+  background-color: #66CCFF;
+  margin: 5px;
+  font-size: 20px;
+  font-family: Arial;
+  text-align: right;
+}
+#display, #result{
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
