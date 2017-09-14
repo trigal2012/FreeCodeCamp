@@ -1,1 +1,197 @@
 
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Timer</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+	
+	$(document).ready(function(){
+		//when page loads, disable some buttons
+		document.getElementById('sessionStart').disabled = true;
+		document.getElementById('sessionStop').disabled = true;
+		document.getElementById('sessionReset').disabled = true;
+		document.getElementById('ssMinus').disabled = true;
+	})
+
+	// set time in the UI based on short or long buttons
+	var ssMinutes = 0;
+	var ssSeconds = 0;
+	function setTime(value1, value2){
+		ssMinutes = value1;
+		ssSeconds = value2;
+		document.getElementById('ssMin').innerHTML = ('0' + value1).slice(-2);
+		document.getElementById('ssSec').innerHTML = ('0' + value2).slice(-2);
+		document.getElementById('ssMinus').disabled = false;
+		document.getElementById('sessionStart').disabled = false;
+	}
+
+	//add or subtract minutes with plus and minus buttons
+	function plus(btnID, clockID){
+		if (ssMinutes <59){
+			ssMinutes+=1
+		};
+		document.getElementById(clockID).innerHTML =('0' + ssMinutes).slice(-2);
+		document.getElementById('sessionStart').disabled = false;
+		document.getElementById('ssMinus').disabled = false;	
+		if (ssMinutes ===59){
+			document.getElementById(btnID).disabled = true;
+		}
+	}
+
+	function minus(btnID, clockID){
+		if (ssMinutes>0){
+			ssMinutes=ssMinutes-1;
+			document.getElementById('ssPlus').disabled = false;
+			document.getElementById('sessionStart').disabled = false;
+		}
+		document.getElementById(clockID).innerHTML =('0' + ssMinutes).slice(-2);
+		if (ssMinutes ===0){
+			document.getElementById(btnID).disabled = true;
+			document.getElementById('sessionStart').disabled = true;
+			};
+	}
+
+	//gets remaining time for use by the updateClock function
+	function getTimeRemaining(endtime){
+		var t = Date.parse(endtime) - Date.parse(new Date());
+		var seconds = Math.floor( (t/1000) % 60 );
+		var minutes = Math.floor( (t/1000/60) % 60 );
+		return {
+		    'total': t,
+		    'minutes': minutes,
+		    'seconds': seconds
+		  };
+	}
+
+	//begin countdown when start button is pressed
+	var timeinterval = 0;
+	var endtime = 0;
+	function initializeClock(){
+	  	document.getElementById('sessionStart').disabled = true;
+	  	document.getElementById('sessionStop').disabled = false;
+	  	document.getElementById('sessionReset').disabled = true;
+		document.getElementById('ssMinus').disabled = true;
+		document.getElementById('ssPlus').disabled = true;
+		document.getElementById('long').disabled = true;
+		document.getElementById('short').disabled = true;
+	  	endtime = new Date(Date.parse(new Date()) + ssSeconds*60*10 + ssMinutes*60*1000);
+	  	
+	  updateClock();
+	  timeinterval = setInterval(updateClock,1000);
+	}
+  	//updates the html as time runs down
+  	function updateClock(){
+    	var t = getTimeRemaining(endtime);
+    	document.getElementById('ssMin').innerHTML = ('0' + t.minutes).slice(-2);
+    	document.getElementById('ssSec').innerHTML = ('0' + t.seconds).slice(-2);    
+	    if(t.total<=0){
+	      clearInterval(timeinterval);
+	      alarmPlay();
+	    }
+  	}
+
+	//when stopped
+	function stopStuff(){
+		clearInterval(timeinterval);
+		document.getElementById('sessionStart').disabled = true;
+	  	document.getElementById('sessionStop').disabled = true;
+	  	document.getElementById('sessionReset').disabled = false;
+	  	alarmStop();
+	 }
+
+	 //when reset
+	 function resetStuff(){
+	 	document.getElementById('ssMin').innerHTML = ('0' + ssMinutes).slice(-2);
+	    document.getElementById('ssSec').innerHTML = ('0' + ssSeconds).slice(-2);    
+	  	document.getElementById('sessionStart').disabled = false;
+	  	document.getElementById('sessionStop').disabled = true;
+	  	document.getElementById('sessionReset').disabled = true;
+	  	document.getElementById('ssMinus').disabled = false;
+		document.getElementById('ssPlus').disabled = false;
+		document.getElementById('long').disabled = false;
+		document.getElementById('short').disabled = false;	
+	 	if(ssMinutes===0 && ssSeconds ===0){
+	 		document.getElementById('sessionStart').disabled = true};
+	 }
+
+	// alarm actions
+	var alarm = new Audio ("http://www.nifter.com/television_theme_songs_music/tv_theme_twilight_zone_NifterDotCom.mp3");
+
+	function alarmPlay() {
+		alarm.play();
+		return false;
+	}
+
+	function alarmStop() {
+		alarm.pause();
+		return false;
+	}
+
+
+  </script>
+<style type="text/css">
+	body {
+		width: 600px;
+	}
+	.clock {
+		margin-top: -30px;
+	}
+
+	.plus {
+		background-color: green;
+		border-radius: 50px;
+		margin-top: 10px;
+	}
+	.minus {
+		background-color: red;
+		border-radius: 50px;
+		margin-top: 10px;
+	}
+	.ss {
+		border-radius: 50px;		
+	}
+
+	.base {
+		margin-top: 30px;
+	}
+</style>
+
+</head>
+<body>
+<div class='col-xs-2'></div>
+<div class='col-xs-8 text-center middle'>
+	<div class='row'>
+		<button id='short' class='col-xs-3 base btn-info' onclick='setTime(5,0)'>Short Session</button>
+		<h1 class='col-xs-6'></h1>
+		<button id='long' class='col-xs-3 base btn-info' onclick='setTime(25,0)'>Long Session</button>
+	</div>
+	<div class='row'>
+		<button id='ssMinus' class='col-xs-3 minus' onclick="minus('ssMinus','ssMin');">-</button>
+		<h1 id='sessionClock' class='col-xs-6 clock'><span id='ssMin'>00</span>:<span id='ssSec'>00</span></h1>
+		<button id='ssPlus' class='col-xs-3 plus' onclick="plus('ssPlus','ssMin');">+</button>
+	</div>
+	<div class='row'>
+		<div class='col-xs-3'></div>
+		<button id='sessionStart' class='col-xs-2 btn-primary ss' onclick="initializeClock()">Start</button>
+		<button id='sessionStop' class='col-xs-2 btn-primary ss' onclick="stopStuff()">Stop</button>
+		<button id='sessionReset' class='col-xs-2 btn-primary ss' onclick="resetStuff()">Reset</button>
+		<div class='col-xs-3'></div>
+	</div>
+	<div class='text-left'>
+		<p></p>
+		<p>This is a basic pomodoro clock.</p>
+		<ul>
+			<li>on page load, enable short session, long session, and plus button</li>
+			<li>short session sets timer to 5min, long session sets timer to 25min, plus/minus buttons add/subtract 1min</li>
+			<li>can't subtract if timer is set to zero, can't add more than 59min</li>
+			<li>start button works only if timer is < zero</li>
+			<li>stop works only after start</li>
+			<li>reset works only after stop and sets timer to last value before clicking start</li>
+		</ul>		
+	</div>
+<div class='col-xs-2'></div>
+</body>
